@@ -18,16 +18,16 @@
                         @csrf <!-- {{ csrf_field() }} -->
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="inputGroupName">Имя</label>
-                            <input type="text" name="name" class="form-control" id="inputGroupName">
+                            <input type="text" name="name" class="form-control" id="inputGroupName" required>
                         </div>
 
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="inputGroupEmail">Email</label>
-                            <input type="email" name="email" class="form-control" id="inputGroupEmail">
+                            <input type="email" name="email" class="form-control" id="inputGroupEmail" required>
                         </div>
 
                         <div class="input-group mb-3">
-                            <input type="file" class="form-control" name="image[]" id="inputGroupFile" multiple="multiple">
+                            <input type="file" class="form-control" name="image[]" id="inputGroupFile" multiple="multiple" required>
                         </div>
 
                         <div class="input-group mb-3">
