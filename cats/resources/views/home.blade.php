@@ -23,8 +23,8 @@
                     </thead>
                     @foreach ($cats as $cat)
                         <tr>
-                            <td><a href="#">{{ $cat->name }}</a></td>
-                            <td><a href="#">{{ $cat->email }}</a></td>
+                            <td><a href="/cat/{{ $cat->id }}">{{ $cat->name }}</a></td>
+                            <td><a href="/cat/{{ $cat->id }}">{{ $cat->email }}</a></td>
                         </tr>
                     @endforeach
                     </table>
