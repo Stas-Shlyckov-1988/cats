@@ -25,7 +25,7 @@
         <div class="vr" style="width: 81em;opacity: 1;">
             <div class="bg-success p-2 text-white">{{ $currentCat->name }}</div>
             <p class="text-white">{{ $currentCat->email }}</p>
-            @foreach ($currentCat->getImages($currentCat->id) as $image)
+            @foreach ($currentCat->getImages() as $image)
                 <img width="200" src="{{ $image->path }}" class="rounded mx-auto" alt="{{ $image->name }}">
             @endforeach
             

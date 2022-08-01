@@ -39,7 +39,7 @@ class HomeController extends Controller
              if ($request->hasFile('image')) {
                 $images = $request->file('image');
                 foreach($images as $image) {
-                    $name = time().'.'.$image->getClientOriginalExtension();
+                    $name = uniqid().'.'.$image->getClientOriginalExtension();
                     $destinationPath = public_path('/images');
                     $image->move($destinationPath, $name);
                     $file = new Files;
@@ -48,9 +48,9 @@ class HomeController extends Controller
                     $file->save();
                     DB::insert('insert into cats_has_file (cat_id, file_id) values (?, ?)', [$cat->id, $file->id]);
                     //save();
-                    return back()->with('success','Image Upload successfully');
+                    
                 }
-                
+                return back()->with('success','Image Upload successfully');
             }
         }
 
@@ -73,7 +73,7 @@ class HomeController extends Controller
                 $images = $request->file('image');
 
                 foreach($images as $image) {
-                    $name = time().'.'.$image->getClientOriginalExtension();
+                    $name = uniqid().'.'.$image->getClientOriginalExtension();
                     $destinationPath = public_path('/images');
                     $image->move($destinationPath, $name);
                     $file = new Files;
@@ -82,9 +82,9 @@ class HomeController extends Controller
                     $file->save();
                     DB::insert('insert into cats_has_file (cat_id, file_id) values (?, ?)', [$id, $file->id]);
                     //save();
-                    return back()->with('success','Image Upload successfully');
+                    
                 }
-                
+                return back()->with('success','Image Upload successfully');
             }
         }
 

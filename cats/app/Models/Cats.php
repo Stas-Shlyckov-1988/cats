@@ -18,8 +18,8 @@ class Cats extends Model
     protected $table = 'cats';
 
 
-    public function getImages($idCat) {
-        return DB::select('select f.* from files f inner join cats_has_file cf on cf.file_id = f.id where cf.cat_id = ' . $idCat);
+    public function getImages() {
+        return DB::select('select f.* from files f inner join cats_has_file cf on cf.file_id = f.id where cf.cat_id = ' . $this['id']);
     }
 
     public function removeFiles() {
