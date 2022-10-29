@@ -7,4 +7,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+cd cats/cats  
+sudo docker-compose up  
+composer install  
+cp .env.example .env  
 
